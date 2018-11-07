@@ -22,5 +22,11 @@ Route::get('my-home', 'HomeController@myHome');
 
 Route::get('my-users', 'HomeController@myUsers');
 
-Route::get('/uploadDocument', 'DocumentController@index');
-Route::post('/uploadDocumnet', 'DocumentController@showUploadDocument');
+Route::get('userpage', 'UserPageController@index');
+Route::resource('upload-files','FileController');
+
+Route::get('/multiuploads', 'UploadController@uploadForm');
+
+Route::post('/multiuploads','UploadController@uploadSubmit');
+Route:: get('viewAlldownloadfile','DownloadController@downfunc');
+Route:: get('test','TestController@index');
