@@ -21,3 +21,6 @@ Route::get('/home', 'HomeController@index');
 Route::get('my-home', 'HomeController@myHome');
 
 Route::get('my-users', 'HomeController@myUsers');
+
+Route::get('/uploadDocument', 'DocumentController@index');
+Route::post('/uploadDocumnet', 'DocumentController@showUploadDocument');
