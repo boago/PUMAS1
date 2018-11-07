@@ -12,14 +12,15 @@
 
     </button>
 
-    <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+   <!-- <a class="navbar-brand" href="index.html">SB Admin v2.0</a>-->
 
 </div>
 
 <!-- /.navbar-header -->
 
+<!--nav class="navbar navbar-defaultnavbar-static-top">-->
 
-<nav class="navbar navbar-default navbar-static-top">
+<nav class="navbar-static-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -40,7 +41,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
                 <!-- Left Side Of Navbar -->
                 <ul class="nav navbar-nav">
-                    <li><a href="{{ url('/home') }}">Home</a></li>
+                    <li><a href="{{ url('/') }}">Home</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->
