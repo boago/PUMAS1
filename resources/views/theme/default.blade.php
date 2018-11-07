@@ -16,8 +16,9 @@
 
 
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
-
+    <title>PUMAS</title>
+    <link rel="icon" type="image/png" href="/resources/views/apple-icon-60x60.png"/>
+    
 
 
     <!-- Bootstrap Core CSS -->
@@ -63,10 +64,13 @@
         <!-- Navigation -->
 
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-
-            @include('theme.header')
-
+            
             @include('theme.sidebar')
+            @include('theme.header')
+            
+           
+            <!--@include('theme.footer')-->
+
 
         </nav>
 
@@ -120,7 +124,9 @@
 
     <script src="{!! asset('theme/dist/js/sb-admin-2.js') !!}"></script>
 
-
+    <footer class="footer">
+            @include('theme.footer')
+    </footer>
 
 </body>
 

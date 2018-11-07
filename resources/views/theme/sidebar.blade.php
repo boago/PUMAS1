@@ -28,7 +28,7 @@
 
             <li>
 
-                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Project Document</a>
 
             </li>
 
@@ -68,7 +68,7 @@
 
             </li>
 
-            <li>
+            <!--<li>
 
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
 
@@ -84,23 +84,23 @@
 
                 <!-- /.nav-second-level -->
 
-            </li>
+           <!-- </li>-->
 
             <li>
 
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i> Documents<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
 
                     <li>
 
-                        <a href="blank.html">Blank Page</a>
+                        <a href="blank.html">Thesis</a>
 
                     </li>
 
                     <li>
 
-                        <a href="login.html">Login Page</a>
+                        <a href="login.html">Articles</a>
 
                     </li>
 
