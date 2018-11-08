@@ -17,7 +17,8 @@
 <div class="container">
     <body>
         <h1>Welcome to PUMAS </h1>
-        <h2> Advance your research</h2>
+        <h2> Advance your research
+    </h2>
     </body>
     
     

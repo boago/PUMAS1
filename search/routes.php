@@ -11,8 +11,10 @@
 |
 */
 
+
+
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
 });
 
 Route::auth();
@@ -22,19 +24,8 @@ Route::get('my-home', 'HomeController@myHome');
 
 Route::get('my-users', 'HomeController@myUsers');
 
-
-Route::get('userpage', 'UserPageController@index');
-Route::resource('upload-files','FileController');
-
-Route::get('/multiuploads', 'UploadController@uploadForm');
-
-Route::post('/multiuploads','UploadController@uploadSubmit');
-Route:: get('viewAlldownloadfile','DownloadController@downfunc');
-Route::get('redirect',function(){
-   return redirect()->route('viewAlldownloadfile');
-});
-Route::get('/uploadfile','UploadController@getView');
-Route::post('/insertfile',array('as'=>'insertfile','uses'=>'UploadController@insertFile'));
+Route::get('/uploadDocument', 'DocumentController@index');
+Route::post('/uploadDocumnet', 'DocumentController@showUploadDocument');
 
 /*
 |start

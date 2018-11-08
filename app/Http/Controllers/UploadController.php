@@ -3,85 +3,116 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Docs;
 
-use App\Http\Requests;
+use Input;
+use Validator;
+use Session;
+use Redirect;
+use App\FileModel;
+
 
 class UploadController extends Controller
 {
-    public function uploadForm()
- 
-{
- 
-return view('upload_form');
- 
-}
     
-    public function uploadSubmit(Request $request)
- 
-{
- 
-$this->validate($request, [
- 
-'name' => 'required',
- 
-'photos'=>'required',
- 
-]);
- 
-if($request->hasFile('photos'))
- 
-{
- 
-$allowedfileExtension=['pdf','jpg','png','docx'];
- 
-$files = $request->file('photos');
- 
-foreach($files as $file){
- 
-$filename = $file->getClientOriginalName();
- 
-$extension = $file->getClientOriginalExtension();
- 
-$check=in_array($extension,$allowedfileExtension);
- 
-//dd($check);
- 
-if($check)
- 
-{
- 
-$items= Docs::create($request->all());
- 
-foreach ($request->photos as $photo) {
- 
-$filename = $photo->store('photos');
- 
-Docs::create([
- 
-'item_id' => $items->id,
- 
-'filename' => $filename
- 
-]);
- 
-}
- 
-echo "Upload Successfully";
- 
-}
- 
-else
- 
-{
- 
-echo '<div class="alert alert-warning"><strong>Warning!</strong> Sorry Only Upload png , jpg , doc</div>';
- 
-}
- 
-}
- 
-}
- 
-}
+
+
+    public function getView(){
+    	return view('uploadfile');
+    }
+
+    public function insertFile(){
+
+         $author=Input::get('author');
+    	$title=Input::get('title');
+		$description=Input::get('description');
+    	$fieldofstudy=Input::get('fieldofstudy');
+		$university=Input::get('university');
+    	$file= Input::file('filenam');
+
+
+    	
+
+    	$rules = array(
+           
+			'author' => 'required',
+            'title' => 'required',
+			'description' => 'required',
+			//'fields' => 'required',
+			'university'=> 'required',
+            'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,png,jpg'
+            ); 
+
+
+    	// 'image' => 'required|mimes:jpeg,png,jpg,gif,svg,csv,xls,xlsx,doc,docx|m‌​ax:2048'
+
+
+
+        // do the validation ----------------------------------
+        // validate against the inputs from our form
+        $validator = Validator::make(Input::all(), $rules);
+
+		  if ($validator->fails()) {
+
+            // redirect our user back with error messages       
+            $messages = $validator->messages();
+		    // send back to the page with the input data and errors
+		    return Redirect::to('uploadfile')->withInput()->withErrors($validator);
+
+		  }else if ($validator->passes()){
+
+		    // checking file is valid.
+		    if (Input::file('filenam')->isValid()) {
+
+		      //$destinationPath = 'images/profile/'; // upload path
+		     $extension = Input::file('filenam')->getClientOriginalExtension(); // getting image extension
+		    $filename = rand(11111,99999).'.'.$extension; // renameing image
+
+
+		  // uploading file to given path
+
+		    	//$destinationPath = '../uploads';//its refers proj/uploads
+                $destinationPath = 'up_file';//its refers proj/public/up_file directry
+
+
+                $data=array(
+				    'author' => $author,
+                    'title' => $title,
+					'description'=> $description,
+    	            'fieldofstudy' => fieldofstudy,
+	                'university' =>$university,
+                   
+                    'file_name' => $filename,
+                );
+
+
+                FileModel::insert($data);
+
+
+                $upload_success = $file->move($destinationPath, $filename);
+                $notification = array(
+                    'message' => 'File Uploaded successfully!', 
+                    'alert-type' => 'success'
+                );
+
+                return Redirect::to('uploadfile')->with($notification);
+
+       
+		    }
+		    else {
+		      // sending back with error message.
+		      
+
+                $notification = array(
+                        'message' => 'uploaded file is not valid!', 
+                        'alert-type' => 'error'
+                    );
+
+                return Redirect::to('uploadfile')->with($notification);
+		    }
+  		}
+
+
+
+    }
+
 }

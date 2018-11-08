@@ -5,7 +5,8 @@
         <ul class="nav" id="side-menu">
 
             <li class="sidebar-search">
-                      <!-- /start -->
+        
+        <!-- /start -->
 		<form action="/search" method="POST" role="search">
 			{{ csrf_field() }}
 			<div class="input-group">
@@ -19,29 +20,13 @@
 		</form>
         <!-- /end -->
 
-                <div class="input-group custom-search-form">
-
-                    <input type="text" class="form-control" placeholder="Search...">
-
-                    <span class="input-group-btn">
-
-                    <button class="btn btn-default" type="button">
-
-                        <i class="fa fa-search"></i>
-
-                    </button>
-
-                </span>
-
-                </div>
-
                 <!-- /input-group -->
 
             </li>
 
             <li>
 
-                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Project Document</a>
+                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
 
             </li>
 
@@ -81,7 +66,7 @@
 
             </li>
 
-            <!--<li>
+            <li>
 
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
 
@@ -97,23 +82,23 @@
 
                 <!-- /.nav-second-level -->
 
-           <!-- </li>-->
+            </li>
 
             <li>
 
-                <a href="#"><i class="fa fa-files-o fa-fw"></i> Documents<span class="fa arrow"></span></a>
+                <a href="#"><i class="fa fa-files-o fa-fw"></i> Sample Pages<span class="fa arrow"></span></a>
 
                 <ul class="nav nav-second-level">
 
                     <li>
 
-                        <a href="blank.html">Thesis</a>
+                        <a href="blank.html">Blank Page</a>
 
                     </li>
 
                     <li>
 
-                        <a href="login.html">Articles</a>
+                        <a href="login.html">Login Page</a>
 
                     </li>
 
