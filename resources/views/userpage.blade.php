@@ -34,8 +34,6 @@
 							</a>
 
                 
-                <i class="glyphicon glyphicon-cloud-download"></i>
-                <i class="glyphicon glyphicon-cloud-upload">UPLOAD</i>
 			</div>
             
             
