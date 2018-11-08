@@ -26,9 +26,6 @@ Route::get('my-users', 'HomeController@myUsers');
 Route::get('userpage', 'UserPageController@index');
 Route::resource('upload-files','FileController');
 
-Route::get('/multiuploads', 'UploadController@uploadForm');
-
-Route::post('/multiuploads','UploadController@uploadSubmit');
 Route:: get('viewAlldownloadfile','DownloadController@downfunc');
 Route::get('redirect',function(){
    return redirect()->route('viewAlldownloadfile');

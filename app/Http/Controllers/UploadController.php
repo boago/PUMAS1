@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
 use Input;
 use Validator;
 use Session;
@@ -22,8 +21,8 @@ class UploadController extends Controller
 
     public function insertFile(){
 
-         $author=Input::get('author');
-    	$filetitle=Input::get('title');
+        $author=Input::get('author');
+    	$filetitle=Input::get('file_title');
 		$description=Input::get('description');
     	$fields=Input::get('fields');
 		$university=Input::get('university');
@@ -39,7 +38,7 @@ class UploadController extends Controller
 			'description' => 'required',
 			//'fields' => 'required',
 			'university'=> 'required',
-            'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,png,jpg'
+            'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,pdf'
             ); 
 
 
@@ -82,6 +81,7 @@ class UploadController extends Controller
 	                'university' =>$university,
                    'file_title' => $filetitle,
                     'file_name' => $filename,
+                    'file_type' => $file_type,
                 );
 
 
@@ -114,5 +114,4 @@ class UploadController extends Controller
 
 
     }
-
 }
