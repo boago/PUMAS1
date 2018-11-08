@@ -23,9 +23,9 @@ class UploadController extends Controller
     public function insertFile(){
 
          $author=Input::get('author');
-    	$title=Input::get('title');
+    	$filetitle=Input::get('file_title');
 		$description=Input::get('description');
-    	$fieldofstudy=Input::get('fieldofstudy');
+    	$fields=Input::get('fields');
 		$university=Input::get('university');
     	$file= Input::file('filenam');
 
@@ -35,7 +35,7 @@ class UploadController extends Controller
     	$rules = array(
            
 			'author' => 'required',
-            'title' => 'required',
+            'file_title' => 'required',
 			'description' => 'required',
 			//'fields' => 'required',
 			'university'=> 'required',
@@ -76,11 +76,11 @@ class UploadController extends Controller
 
                 $data=array(
 				    'author' => $author,
-                    'title' => $title,
+                    'file_title' => $filetitle,
 					'description'=> $description,
-    	            'fieldofstudy' => fieldofstudy,
+    	            'fieldofstudy' => $fields,
 	                'university' =>$university,
-                   
+                   'file_title' => $filetitle,
                     'file_name' => $filename,
                 );
 
