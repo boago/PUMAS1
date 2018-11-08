@@ -23,7 +23,7 @@ class UploadController extends Controller
     public function insertFile(){
 
          $author=Input::get('author');
-    	$filetitle=Input::get('file_title');
+    	$filetitle=Input::get('title');
 		$description=Input::get('description');
     	$fields=Input::get('fields');
 		$university=Input::get('university');

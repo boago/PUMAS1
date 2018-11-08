@@ -33,6 +33,7 @@ Route:: get('viewAlldownloadfile','DownloadController@downfunc');
 Route::get('redirect',function(){
    return redirect()->route('viewAlldownloadfile');
 });
+
 Route::get('/uploadfile','UploadController@getView');
 Route::post('/insertfile',array('as'=>'insertfile','uses'=>'UploadController@insertFile'));
 

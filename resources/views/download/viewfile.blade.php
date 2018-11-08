@@ -36,8 +36,8 @@
 
 					@foreach($downloads as $down)
 						<tr>
-							<td>{{$down->description}}</td>
-							<td>{{$down->created_at}}</td>
+							<td>{{$down->id}}</td>
+							<td>{{$down->email}}</td>
 							<td>
 							<a href="download/{{$down->description}}" download="{{$down->description}}">
 								<button type="button" class="btn btn-primary">

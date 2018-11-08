@@ -24,6 +24,7 @@ class Document extends Migration
                             $table -> timestamps('docDate');
                             $table -> string('api_key')->nullable() ->unique();
                             $table -> rememberToken();
+                            $table -> file('filenam')
      
                             
                         });

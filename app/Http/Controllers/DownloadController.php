@@ -10,7 +10,7 @@ use DB;
 class DownloadController extends Controller
 {
       public function downfunc(){
-    	$downloads=DB::table('document')->get();
+    	$downloads=DB::table('users')->get();
     	return view('download.viewfile',compact('downloads'));
     }
 
