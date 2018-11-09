@@ -81,7 +81,7 @@ class UploadController extends Controller
 	                'university' =>$university,
                    'file_title' => $filetitle,
                     'file_name' => $filename,
-                    'file_type' => $file_type,
+                    
                 );
 
 

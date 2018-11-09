@@ -16,12 +16,13 @@ class Document extends Migration
         Schema ::create('document',function(Blueprint $table)
                         {
                             $table -> increments('docID');
-                            $table -> string('author_name');
+                            $table -> string('author');
 							$table -> string('file_title');
                             $table -> string('description');
                             $table -> string('fieldofstudy');
                             $table -> string('university');
                             $table -> string('file_type');
+                            $table -> string('file_name');
                             $table -> timestamps('docDate');
                             $table -> string('api_key')->nullable() ->unique();
                             $table -> rememberToken();
