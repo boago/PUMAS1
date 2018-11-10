@@ -46,14 +46,13 @@
       </div>
     </div>
 
-
+      {!! Form::close() !!}
 
     </div>
 
     
-{!! Form::close() !!}
 
-</div>
+
  
 
 
@@ -72,6 +71,3 @@
     }
   @endif
 </script>
-
-</body>
-</html>

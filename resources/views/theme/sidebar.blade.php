@@ -19,7 +19,7 @@
 		</form>
         <!-- /end -->
 
-                <div class="input-group custom-search-form">
+                <!--<div class="input-group custom-search-form">
 
                     <input type="text" class="form-control" placeholder="Search...">
 
@@ -33,7 +33,7 @@
 
                 </span>
 
-                </div>
+                </div>-->
 
                 <!-- /input-group -->
 

@@ -36,7 +36,7 @@
 
 					@foreach($downloads as $down)
 						<tr>
-							<td>{{$down->description}}</td>
+							<td>{{$down->file_title}}</td>
 							<td>{{$down->created_at}}</td>
 							<td>
 							<a href="download/{{$down->description}}" download="{{$down->description}}">

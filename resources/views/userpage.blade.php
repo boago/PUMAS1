@@ -27,11 +27,12 @@
 			<div class="panel-body">
 			<h3>Are you starting a new research project?</h3>
             <br>
-            <h4>Add a new project</h4> <a href="{{ url('/uploadfile') }}">
-								<button type="button" class="btn btn-primary">
-								<i class="glyphicon glyphicon-folder-open"> ADD</i>
-								</button>
-							</a>
+            <h4>Add a new project</h4> 
+                <a href="{{ url('/uploadfile') }}">
+                    <button type="button" class="btn btn-primary">
+                        <i class="glyphicon glyphicon-folder-open"> ADD</i>
+                    </button>
+                </a>
 
                 
 			</div>
