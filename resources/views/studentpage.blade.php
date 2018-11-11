@@ -4,12 +4,14 @@
 @section('content')
 
 <body>
+   
     
     <div class="container-fluid">
         <div class="col-md-10 col-md-offset-1">
-
+            <h1> Upload documents for {{ Auth::user()->name }}</h1>
+            <br>
 			<table class="table table-striped">
-    
+        
 				<thead>
                     <th>Author </th>
                     <th> Title </th>

@@ -10,38 +10,24 @@
 			{{ csrf_field() }}
 			<div class="input-group">
 				<input type="text" class="form-control" name="q"
-					placeholder="Search users"> <span class="input-group-btn">
-					<button type="submit" class="btn btn-default">
-						<span class="glyphicon glyphicon-search"></span>
-					</button>
+					placeholder="Search..."> 
+                <span class="input-group-btn">
+                    <a href="{{ url('/viewAlldownloadfile')}}">
+                        <button type="submit" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                            <!--<i class="fa fa-search"></i>-->
+                        </button>
+                    </a>
 				</span>
 			</div>
 		</form>
-        <!-- /end -->
-
-                <!--<div class="input-group custom-search-form">
-
-                    <input type="text" class="form-control" placeholder="Search...">
-
-                    <span class="input-group-btn">
-
-                    <button class="btn btn-default" type="button">
-
-                        <i class="fa fa-search"></i>
-
-                    </button>
-
-                </span>
-
-                </div>-->
-
-                <!-- /input-group -->
+      
 
             </li>
 
             <li>
 
-                <a href="index.html"><i class="fa fa-dashboard fa-fw"></i> Project Document</a>
+                <a href="{{ url('/uploadfile') }}"><i class="fa fa-dashboard fa-fw"></i> Upload</a>
 
             </li>
 
@@ -64,24 +50,21 @@
                     </li>
 
                 </ul>
-
-                <!-- /.nav-second-level -->
-
             </li>
 
             <li>
 
-                <a href="tables.html"><i class="fa fa-table fa-fw"></i> Tables</a>
+                <a href="tables.html"><i class="glyphicon glyphicon-bell"></i> Notification </a>
 
             </li>
 
-            <li>
+            <!--li>
 
                 <a href="forms.html"><i class="fa fa-edit fa-fw"></i> Forms</a>
 
             </li>
 
-            <!--<li>
+            <li>
 
                 <a href="#"><i class="fa fa-wrench fa-fw"></i> UI Elements<span class="fa arrow"></span></a>
 
@@ -93,7 +76,7 @@
 
                     </li>
 
-                </ul>
+                </ul-->
 
                 <!-- /.nav-second-level -->
 

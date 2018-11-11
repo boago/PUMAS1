@@ -18,6 +18,7 @@ class StudentPageController extends Controller
 {
     public function index()
     {
+        $name = Auth::user()->name;
         $email=Auth::user()->email;
         $parts=explode("@", $email);
         $id=$parts[0];
