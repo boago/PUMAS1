@@ -27,7 +27,7 @@
 
             <li>
 
-                <a href="{{ url('/uploadfile') }}"><i class="fa fa-dashboard fa-fw"></i> Upload</a>
+                <a href="{{ url('/uploadfile') }}"><i class="glyphicon glyphicon-upload"></i> Upload</a>
 
             </li>
 
