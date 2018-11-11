@@ -17,17 +17,18 @@ class Document extends Migration
                         {
                             $table -> increments('docID');
                             $table -> string('author');
-                            $table -> string('student_number');
+
+							$table -> string('student_number');
+
 							$table -> string('file_title');
                             $table -> string('description');
                             $table -> string('fieldofstudy');
                             $table -> string('university');
                             $table -> string('file_type');
                             $table -> string('file_name');
-                            $table -> timestamps('docDate');
                             $table -> string('api_key')->nullable() ->unique();
-                            $table -> rememberToken();
-     
+                            $table->timestamp('created_at')->useCurrent();
+                            $table->timestamp('updated_at')->useCurrent();
                             
                         });
     }
@@ -39,6 +40,7 @@ class Document extends Migration
      */
     public function down()
     {
+		Schema::drop('document');
         //
     }
 }
