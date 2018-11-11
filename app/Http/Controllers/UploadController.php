@@ -26,11 +26,7 @@ class UploadController extends Controller
 		$description=Input::get('description');
     	$fields=Input::get('fields');
 		$university=Input::get('university');
-    	$file= Input::file('filename');
-
-
-    	
-
+    	$file= Input::file('filenam');
     	$rules = array(
            
 			'author' => 'required',
@@ -38,7 +34,7 @@ class UploadController extends Controller
 			'description' => 'required',
 			//'fields' => 'required',
 			'university'=> 'required',
-            'filename' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,pdf'
+            'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,pdf'
             ); 
 
 
@@ -60,11 +56,11 @@ class UploadController extends Controller
 		  }else if ($validator->passes()){
 
 		    // checking file is valid.
-		    if (Input::file('filename')->isValid()) {
+		    if (Input::file('filenam')->isValid()) {
 
 		      //$destinationPath = 'images/profile/'; // upload path
-		     $extension = Input::file('filename')->getClientOriginalExtension(); // getting image extension
-		    $filename = rand(11111,99999).'.'.$extension; // renaming image
+		     $extension = Input::file('filenam')->getClientOriginalExtension(); // getting image extension
+		    $filename = rand(11111,99999).'.'.$extension; // renameing image
 
 
 		  // uploading file to given path
