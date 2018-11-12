@@ -42,13 +42,14 @@ Route::post('/insertfile',array('as'=>'insertfile','uses'=>'UploadController@ins
 */
 use App\User;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 
 Route::post ( '/search', function () {
 	$q = Input::get ( 'q' );
 	if($q != ""){
-		$user = User::where ( 'name', 'LIKE', '%' . $q . '%' )->orWhere ( 'email', 'LIKE', '%' . $q . '%' )->get ();
-		if (count ( $user ) > 0)
-			return view ( 'search' )->withDetails ( $user )->withQuery ( $q );
+		$find = DB::table('document') -> where ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->get ();
+		if (count ( $find ) > 0)
+			return view ( 'search' )->withDetails ( $find )->withQuery ( $q );
 		else
 			return view ( 'search' )->withMessage ( 'No Details found. Try to search again !' );
 	}
