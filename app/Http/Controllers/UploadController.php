@@ -8,18 +8,25 @@ use Validator;
 use Session;
 use Redirect;
 use App\FileModel;
+use Illuminate\Support\Facades\Auth;
+
+use App\Http\Controllers\Auth\AuthController;
 
 
 class UploadController extends Controller
 {
     
 
-
+   
     public function getView(){
     	return view('uploadfile');
     }
 
     public function insertFile(){
+         $name = Auth::user()->name;
+        $email=Auth::user()->email;
+        $parts=explode("@", $email);
+        $id=$parts[0];
 
         $author=Input::get('author');
     	$filetitle=Input::get('file_title');
@@ -30,11 +37,12 @@ class UploadController extends Controller
     	$rules = array(
            
 			'author' => 'required',
+            
             'file_title' => 'required',
 			'description' => 'required',
 			//'fields' => 'required',
 			'university'=> 'required',
-            'filename' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,pdf'
+            'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,pdf'
             ); 
 
 
@@ -56,10 +64,10 @@ class UploadController extends Controller
 		  }else if ($validator->passes()){
 
 		    // checking file is valid.
-		    if (Input::file('filename')->isValid()) {
+		    if (Input::file('filenam')->isValid()) {
 
 		      //$destinationPath = 'images/profile/'; // upload path
-		     $extension = Input::file('filename')->getClientOriginalExtension(); // getting image extension
+		     $extension = Input::file('filenam')->getClientOriginalExtension(); // getting image extension
 		    $filename = rand(11111,99999).'.'.$extension; // renameing image
 
 
@@ -71,6 +79,8 @@ class UploadController extends Controller
 
                 $data=array(
 				    'author' => $author,
+                    'student_number'=>$id,
+                    
                     'file_title' => $filetitle,
 					'description'=> $description,
     	            'fieldofstudy' => $fields,

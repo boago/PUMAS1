@@ -43,11 +43,12 @@ Route::post('/insertfile',array('as'=>'insertfile','uses'=>'UploadController@ins
 use App\User;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 Route::post ( '/search', function () {
 	$q = Input::get ( 'q' );
 	if($q != ""){
-		$find = DB::table('document') -> where ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->get ();
+		$find = DB::table('document') -> where ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->orWhere ( 'file_title', 'LIKE', '%' . $q . '%' )-> get ();
 		if (count ( $find ) > 0)
 			return view ( 'search' )->withDetails ( $find )->withQuery ( $q );
 		else
