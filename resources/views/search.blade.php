@@ -16,7 +16,12 @@
 				<tbody>
 					@foreach($details as $list)
 					<tr>
-						<td>{{$list->file_title}} by {{$list->author}} </td>
+                         
+                        <td><a href="{{ action('FileDownloadController@down', ['file_title' => $list->file_title]) }}">{{$list->file_title}} by {{$list->author}} </a></td>
+                     
+                       
+                        
+                        
 					</tr>
 					@endforeach
 				</tbody>

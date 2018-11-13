@@ -42,7 +42,7 @@ class UploadController extends Controller
 			'description' => 'required',
 			//'fields' => 'required',
 			'university'=> 'required',
-            'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,pdf'
+            'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,txt,pdf,zip'
             ); 
 
 
