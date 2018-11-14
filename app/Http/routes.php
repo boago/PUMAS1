@@ -37,19 +37,24 @@ Route::get('redirect',function(){
 
 Route::get('/uploadfile','UploadController@getView');
 Route::post('/insertfile',array('as'=>'insertfile','uses'=>'UploadController@insertFile'));
+/*Route::get('/downloadfile/{data}',['uses' =>'FileDownloadController@down']);*/
 
+Route::get('/downloadfile', 'FileDownloadController@down'
+);
 /*
 |start
 */
 use App\User;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 Route::post ( '/search', function () {
 	$q = Input::get ( 'q' );
 	if($q != ""){
-		$user = User::where ( 'name', 'LIKE', '%' . $q . '%' )->orWhere ( 'email', 'LIKE', '%' . $q . '%' )->get ();
-		if (count ( $user ) > 0)
-			return view ( 'search' )->withDetails ( $user )->withQuery ( $q );
+		$find = DB::table('document') -> where ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->orWhere ( 'file_title', 'LIKE', '%' . $q . '%' )-> get ();
+		if (count ( $find ) > 0)
+			return view ( 'search' )->withDetails ( $find )->withQuery ( $q );
 		else
 			return view ( 'search' )->withMessage ( 'No Details found. Try to search again !' );
 	}

@@ -12,12 +12,12 @@
 				<input type="text" class="form-control" name="q"
 					placeholder="Search..."> 
                 <span class="input-group-btn">
-                    <a href="{{ url('/viewAlldownloadfile')}}">
+                   
                         <button type="submit" class="btn btn-default">
                             <span class="glyphicon glyphicon-search"></span>
                             <!--<i class="fa fa-search"></i>-->
                         </button>
-                    </a>
+                   
 				</span>
 			</div>
 		</form>

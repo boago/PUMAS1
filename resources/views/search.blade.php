@@ -6,24 +6,28 @@
 
 		<div  class="col-md-10 col-md-offset-1">
 			@if(isset($details))
-			<h2>Sample User details</h2>
+			<h2>Search Results</h2>
 			<table class="table table-striped">
 				<thead>
 					<tr>
-						<th>Name</th>
-						<th>Email</th>
+						
 					</tr>
 				</thead>
 				<tbody>
-					@foreach($details as $user)
+					@foreach($details as $list)
 					<tr>
-						<td>{{$user->name}}</td>
-						<td>{{$user->email}}</td>
+                         
+                        <td><a href="{{ action('FileDownloadController@down', ['file_title' => $list->file_title]) }}">{{$list->file_title}} by {{$list->author}} </a></td>
+                     
+                       
+                        
+                        
 					</tr>
 					@endforeach
 				</tbody>
 			</table>
 			@elseif(isset($message))
+            <h2>Search Results</h2>
 			<p>{{ $message }}</p>
 			@endif
             </div>
