@@ -33,6 +33,7 @@ class UploadController extends Controller
 		$description=Input::get('description');
     	$fields=Input::get('fields');
 		$university=Input::get('university');
+        $file_type=Input::get('file_type');
     	$file= Input::file('filenam');
     	$rules = array(
            
@@ -42,6 +43,7 @@ class UploadController extends Controller
 			'description' => 'required',
 			//'fields' => 'required',
 			'university'=> 'required',
+             'file_type'=> 'required',
             'filenam' => 'required|max:10000|mimes:doc,docx,jpeg,jpg,txt,pdf,zip'
             ); 
 
@@ -85,8 +87,12 @@ class UploadController extends Controller
 					'description'=> $description,
     	            'fieldofstudy' => $fields,
 	                'university' =>$university,
+                     'file_type' =>$file_type,
                    'file_title' => $filetitle,
                     'file_name' => $filename,
+                    'created_at' => date('Y-m-d H:i:s'),
+                    'updated_at' => date('Y-m-d H:i:s')
+                    
                     
                 );
 
