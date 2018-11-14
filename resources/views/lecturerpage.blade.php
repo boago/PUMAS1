@@ -1,5 +1,5 @@
 
-@extends('theme.default')
+@extends('theme.newdefault')
 @extends('theme.lecturersidebar')
 
 @section('content')
@@ -9,7 +9,7 @@
     
     <div class="container-fluid">
         <div class="col-md-10 col-md-offset-1">
-            <h1> Upload documents for {{ Auth::user()->name }}</h1>
+            <h1> Uploaded Documents for {{ Auth::user()->name }}</h1>
             <br>
 			<table class="table table-bordered">
         
