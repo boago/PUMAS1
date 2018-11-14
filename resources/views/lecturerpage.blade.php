@@ -1,6 +1,6 @@
 
 @extends('theme.default')
-@extends('theme.studentsidebar')
+@extends('theme.lecturersidebar')
 
 @section('content')
 

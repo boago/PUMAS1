@@ -18,7 +18,7 @@ class Document extends Migration
                             $table -> increments('docID');
                             $table -> string('author');
 
-							$table -> string('student_number');
+							$table -> string('Id');
 
 							$table -> string('file_title');
                             $table -> string('description');

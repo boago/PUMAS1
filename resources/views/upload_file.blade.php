@@ -1,4 +1,5 @@
 @extends('theme.default')
+@extends('theme.lecturersidebar')
 
 @section('content')
   <div class="container">

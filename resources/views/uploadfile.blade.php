@@ -1,4 +1,6 @@
 @extends('theme.default')
+@extends('theme.lecturersidebar')
+
 
 @section('content')
 <!DOCTYPE html>

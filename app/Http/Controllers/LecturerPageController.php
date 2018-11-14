@@ -14,15 +14,15 @@ use App\Http\Controllers\Auth\AuthController;
 
 
 
-class StudentPageController extends Controller
+class LecturerPageController extends Controller
 {
-    public function index()
+    public function display()
     {
         $name = Auth::user()->name;
         $email=Auth::user()->email;
         $parts=explode("@", $email);
         $id=$parts[0];
         $items=DB::table('document')->select('author','file_title','description')->where('Id', $id) ->get();
-        return view('studentpage',compact('items'));
+        return view('lecturerpage',compact('items'));
     }
 }

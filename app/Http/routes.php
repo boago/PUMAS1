@@ -28,6 +28,7 @@ Route::resource('upload-files','FileController');
 
 Route::get('studentpage', 'StudentPageController@index');
 
+Route::get('lecturerpage', 'LecturerPageController@display');
 
 Route:: get('viewAlldownloadfile','DownloadController@downfunc');
 Route::get('redirect',function(){
