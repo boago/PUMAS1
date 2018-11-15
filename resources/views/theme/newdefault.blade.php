@@ -13,8 +13,7 @@
     <meta name="description" content="">
 
     <meta name="author" content="">
-
-
+   
 
     <title>PUMAS</title>
     <link rel="icon" type="image/png" href="/resources/views/apple-icon-60x60.png"/>

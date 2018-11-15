@@ -22,7 +22,7 @@ class StudentPageController extends Controller
         $email=Auth::user()->email;
         $parts=explode("@", $email);
         $id=$parts[0];
-        $items=DB::table('document')->select('author','file_title','description')->where('student_number', $id) ->get();
+        $items=DB::table('document')->select('author','file_title','description')->where('Id', $id) ->get();
         return view('studentpage',compact('items'));
     }
 }

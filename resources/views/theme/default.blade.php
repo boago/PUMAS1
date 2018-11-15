@@ -91,7 +91,6 @@
     <!-- /#wrapper -->
 
 
-
     <!-- jQuery -->
 
     <script src="{!! asset('theme/vendor/jquery/jquery.min.js') !!}"></script>

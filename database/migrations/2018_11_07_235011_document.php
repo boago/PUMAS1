@@ -19,7 +19,6 @@ class Document extends Migration
                             $table -> string('author');
 
 							$table -> string('Id');
-
 							$table -> string('file_title');
                             $table -> string('description');
                             $table -> string('fieldofstudy');
