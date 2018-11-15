@@ -98,6 +98,18 @@ Route::post ( '/search', function () {
 	}
 	return view ( 'search' )->withMessage ( 'No Details found. Try to search again !' );
 } );
+
+Route::post ( '/search1', function () {
+	$q1 = Input::get ( 'q1' );
+	if($q1 != ""){
+		$find = DB::table('document') -> where ( 'author', 'LIKE', '%' . $q1 . '%' )->orWhere ( 'description', 'LIKE', '%' . $q1 . '%' )->orWhere ( 'file_title', 'LIKE', '%' . $q1 . '%' )->orWhere ( 'file_type', 'LIKE', '%' . $q1 . '%' )->orWhere ( 'created_at', 'LIKE', '%' . $q1 . '%' )-> get ();
+		if (count ( $find ) > 0)
+			return view ( 'home' )->withDetails ( $find )->withQuery ( $q1 );
+		else
+			return view ( 'home' )->withMessage ( 'No Details found. Try to search again !' );
+	}
+	return view ( 'home' )->withMessage ( 'No Details found. Try to search again !' );
+} );
 /*
 | end
 */
