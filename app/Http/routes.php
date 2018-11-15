@@ -45,6 +45,10 @@ Route::post('/insertfile',array('as'=>'insertfile','uses'=>'UploadController@ins
 
 Route::get('/downloadfile', 'FileDownloadController@down'
 );
+Route::get('/plagiarism_checker', 'PlagiarismController@index'
+);
+Route::get('/plagiarism_upload', 'PlagiarismController@check'
+);
 /*
 |start
 */
@@ -56,7 +60,7 @@ use Illuminate\Support\Facades\Auth;
 Route::post ( '/search', function () {
 	$q = Input::get ( 'q' );
 	if($q != ""){
-		$find = DB::table('document') -> where ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->orWhere ( 'file_title', 'LIKE', '%' . $q . '%' )-> get ();
+		$find = DB::table('document') -> where ( 'author', 'LIKE', '%' . $q . '%' )->orWhere ( 'description', 'LIKE', '%' . $q . '%' )->orWhere ( 'file_title', 'LIKE', '%' . $q . '%' )->orWhere ( 'file_type', 'LIKE', '%' . $q . '%' )->orWhere ( 'created_at', 'LIKE', '%' . $q . '%' )-> get ();
 		if (count ( $find ) > 0)
 			return view ( 'search' )->withDetails ( $find )->withQuery ( $q );
 		else

@@ -1,4 +1,4 @@
-@extends('theme.default')
+@extends('theme.newdefault')
 
 
 @section('content')
@@ -17,7 +17,8 @@
 					@foreach($details as $list)
 					<tr>
                          
-                        <td><a href="{{ action('FileDownloadController@down', ['file_title' => $list->file_title]) }}">{{$list->file_title}} by {{$list->author}} </a></td>
+                        <td><a href="{{ action('FileDownloadController@down', ['file_title' => $list->file_title]) }}">{{$list->file_title}} by {{$list->author}} </a><br>{{$list->description}}
+                        </td>
                      
                        
                         

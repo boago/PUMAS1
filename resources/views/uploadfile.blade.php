@@ -93,6 +93,20 @@
 
 
       </div>
+      	  
+	  <div class="form-group">
+
+
+      <label class="control-label col-sm-2" for="name">File type:</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control file_title_c" id="file_type" name="file_type" placeholder="report,article"  value="{{ Input::old('file_type') }}">
+
+        @if ($errors->has('file_type')) <p class="help-block">{{ $errors->first('file_type') }}</p> @endif
+
+				</div>
+
+
+      </div>
 	    <div class="form-group">
 
 
