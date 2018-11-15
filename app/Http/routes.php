@@ -30,6 +30,10 @@ Route::get('studentpage', 'StudentPageController@index');
 
 Route::get('lecturerpage', 'LecturerPageController@display');
 
+/*Route::get('adminpage', 'AdminController@display');*/
+
+/* for admin */
+Roue
 Route:: get('viewAlldownloadfile','DownloadController@downfunc');
 Route::get('redirect',function(){
    return redirect()->route('viewAlldownloadfile');
