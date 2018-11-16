@@ -10,26 +10,22 @@ use Redirect;
 use App\FileModel;
 use Illuminate\Support\Facades\Auth;
 
-use App\Http\Controllers\Auth\AuthController;
-
-
 class UploadController extends Controller
 {
     
 
-   
+
     public function getView(){
     	return view('uploadfile');
     }
 
     public function insertFile(){
-         /*$name = Auth::user()->name;
+        $name = Auth::user()->name;
         $email=Auth::user()->email;
         $parts=explode("@", $email);
-        $id=$parts[0];*/
-
+        $id=$parts[0];
         $author=Input::get('author');
-        $id=Input::get('Id');
+       // $id=Input::get('Id');
     	$filetitle=Input::get('file_title');
 		$description=Input::get('description');
     	$fields=Input::get('fields');
@@ -39,7 +35,7 @@ class UploadController extends Controller
     	$rules = array(
            
 			'author' => 'required',
-            'Id' => 'required',
+           
             'file_title' => 'required',
 			'description' => 'required',
 			//'fields' => 'required',
@@ -81,8 +77,9 @@ class UploadController extends Controller
 
 
                 $data=array(
+				    
 				    'author' => $author,
-                    'Id'=>$id,                    
+                       'Id'=>$id,               
                     'file_title' => $filetitle,
 					'description'=> $description,
     	            'fieldofstudy' => $fields,
