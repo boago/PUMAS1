@@ -70,7 +70,7 @@ class AuthController extends Controller
 		
         return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|Regex:^([02])(adminpumas)@((ub)\.(ac)\.(bw))^|unique:users',
+            'email' => 'required|email|Regex:^(adminpumas)([0-9]){2}@((mopipi)\.(ub)\.(bw))^|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
 		}
