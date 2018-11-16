@@ -11,6 +11,13 @@
 |
 */
 
+use App\User;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use App\BootGridData;
+
+
 Route::get('/', function () {
     return view('home');
 });
@@ -30,6 +37,36 @@ Route::get('studentpage', 'StudentPageController@index');
 
 Route::get('lecturerpage', 'LecturerPageController@display');
 
+/*Route::get('adminpage', 'AdminController@display');*/
+
+/* for admin */
+
+Route::get('adminpage', function () {
+  $data = BootGridData::all();
+  return view('adminpage')->withData($data);
+});
+
+Route::post('/save', function () {
+  $data = Request::all();
+  $edit = new \App\User;
+  $edit = BootGridData::where('email',$data['email'])->first();
+  #$edit->id=User::find($data['edit_id']); #Auth::user()->name
+    echo $edit;
+
+  $edit->name=$data['name'];
+  $edit->email=$data['email'];
+  $edit->password=$data['password'];
+  $edit->save();
+  return Redirect::back();
+});
+Route::post('/delete',function () {
+  $data = Request::all();
+  $edit = BootGridData::where('id',$data['del_id'])->delete();
+  return Redirect::back();
+});
+
+/*End Admin*/
+
 Route:: get('viewAlldownloadfile','DownloadController@downfunc');
 Route::get('redirect',function(){
    return redirect()->route('viewAlldownloadfile');
@@ -48,10 +85,7 @@ Route::get('/plagiarism_upload', 'PlagiarismController@check'
 /*
 |start
 */
-use App\User;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Auth;
+
 
 Route::post ( '/search', function () {
 	$q = Input::get ( 'q' );
