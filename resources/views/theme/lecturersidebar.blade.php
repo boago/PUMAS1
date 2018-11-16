@@ -27,22 +27,22 @@
 
             <li>
 
-                <a href="{{ url('/uploadfile') }}"><i class="glyphicon glyphicon-upload"></i> Upload</a>
+                <a href="{{ url('/uploadfile') }}"><i class="glyphicon glyphicon-upload"></i> Upload Report, Articles/ Source Code</a>
 
             </li>
-            <li>
+            <!--li>
 
                 <a href="{{ url('/uploadfile') }}"><i class="glyphicon glyphicon-upload"></i> Download Source Code</a>
 
-            </li>
+            </li-->
 
             <li>
 
-                <a href="{{ url('/uploadfile') }}"><i class="glyphicon glyphicon-upload"></i> View Pending</a>
+                <a href="{{ url('/plagiarism_checker') }}"><i class="glyphicon glyphicon-upload"></i> View Pending Report</a>
 
             </li>
 
-            <li>
+            <!--li>
 
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
 
@@ -61,7 +61,7 @@
                     </li>
 
                 </ul>
-            </li>
+            </li-->
 
             <li>
 
@@ -93,7 +93,7 @@
 
            <!-- </li>-->
 
-            <li>
+            <!--li>
 
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Documents<span class="fa arrow"></span></a>
 
@@ -115,7 +115,7 @@
 
                 <!-- /.nav-second-level -->
 
-            </li>
+            <!--/li-->
 
         </ul>
 

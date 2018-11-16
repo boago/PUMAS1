@@ -31,7 +31,7 @@
 
             </li>
 
-            <li>
+            <!--li>
 
                 <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> Charts<span class="fa arrow"></span></a>
 
@@ -50,7 +50,7 @@
                     </li>
 
                 </ul>
-            </li>
+            </li-->
 
             <li>
 
@@ -82,7 +82,7 @@
 
            <!-- </li>-->
 
-            <li>
+            <!--li>
 
                 <a href="#"><i class="fa fa-files-o fa-fw"></i> Documents<span class="fa arrow"></span></a>
 
@@ -104,7 +104,7 @@
 
                 <!-- /.nav-second-level -->
 
-            </li>
+            <!--/li-->
 
         </ul>
 

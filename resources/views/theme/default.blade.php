@@ -29,7 +29,7 @@
 
     <!-- MetisMenu CSS -->
 
-    <link href="{!! asset('theme/vendor/metisMenu/metisMenu.min.css') !!}" rel="stylesheet">
+    <!--link href="{!! asset('theme/vendor/metisMenu/metisMenu.min.css') !!}" rel="stylesheet"-->
 
 
 
@@ -41,7 +41,7 @@
 
     <!-- Morris Charts CSS -->
 
-    <link href="{!! asset('theme/vendor/morrisjs/morris.css') !!}" rel="stylesheet">
+    <!--link href="{!! asset('theme/vendor/morrisjs/morris.css') !!}" rel="stylesheet"-->
 
 
 
@@ -105,17 +105,17 @@
 
     <!-- Metis Menu Plugin JavaScript -->
 
-    <script src="{!! asset('theme/vendor/metisMenu/metisMenu.min.js') !!}"></script>
+    <!--script src="{!! asset('theme/vendor/metisMenu/metisMenu.min.js') !!}"></script--->
 
 
 
     <!-- Morris Charts JavaScript -->
 
-    <script src="{!! asset('theme/vendor/raphael/raphael.min.js') !!}"></script>
+    <!--script src="{!! asset('theme/vendor/raphael/raphael.min.js') !!}"></script>
 
     <script src="{!! asset('theme/vendor/morrisjs/morris.min.js') !!}"></script>
 
-    <script src="{!! asset('theme/data/morris-data.js') !!}"></script>
+    <script src="{!! asset('theme/data/morris-data.js') !!}"></script-->
 
 
 

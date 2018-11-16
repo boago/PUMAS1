@@ -1,20 +1,60 @@
-<!--!DOCTYPE html-->
-<!--html-->
-  <!--meta charset="utf-8">
+<!DOCTYPE html>
+<html>
+    <head>
+  <meta charset="utf-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+   <link href="{!! asset('theme/vendor/bootstrap/css/bootstrap.min.css') !!}" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet" type="text/css">
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.min.css">
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.min.js"></script-->
-@extends('theme.admindefault')
-   <body class="w3-container ">
-      <header class="w3-container w3-text-indigo w3-margin-top-64">
-         <h2>User Details</h2>
-       </header>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-bootgrid/1.3.1/jquery.bootgrid.min.js"></script>
+    </head>
+   <body >
+               <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+
+       <nav class="navbar-static-top">
+           <div class="container">
+            <div class="navbar-header">
+
+                <!-- Collapsed Hamburger -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse">
+                    <span class="sr-only">Toggle Navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               </div>
+           </div>
+
+       <div class="collapse navbar-collapse" id="app-navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                    <!-- Authentication Links -->
+                    @if (Auth::guest())
+                        <li><a href="{{ url('/login') }}">Login</a></li>                        
+                    @else
+                     <li><a href="{{ url('/register') }}">Register New User</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+                                {{ Auth::user()->name }} <span class="caret"></span>
+                            </a>
+
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
+                               
+                            </ul>
+                        </li>
+                    @endif
+                </ul>
+           <!--header class="w3-container w3-text-indigo w3-margin-top-64"-->
+               <h2  class="display-2">User Details</h2>
+           <!--/header-->
+       </div>
+       </nav>
+       </nav>
       <table id="grid-basic" class="w3-table-all w3-card-4">
          <thead>
             <tr class="w3-cyan">
@@ -127,4 +167,4 @@
 
       </script>
    </body>
-<!--/html-->
+</html>
