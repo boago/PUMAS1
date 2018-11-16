@@ -1,5 +1,5 @@
 
-@extends('theme.newdefault')
+<!--@extends('theme.newdefault')
 @extends('theme.lecturersidebar')
 
 @section('content')
@@ -57,4 +57,4 @@
         </div>
     </div>
 </div>
-@endsection
+@endsection-->
