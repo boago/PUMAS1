@@ -28,7 +28,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = 'studentpage';
+  protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -48,13 +48,33 @@ class AuthController extends Controller
      */
     protected function validator(array $data)
     {
-        return Validator::make($data, [
+		
+		$type=$data['type'];
+		if($type == 'student') {
+			return Validator::make($data, [
             'name' => 'required|max:255',
-            'email' => 'required|email|max:255|unique:users',
+			'email' => 'required|email|Regex:^([02])([0-9]){3}(0)([0-9]){4}@((ub)\.(ac)\.(bw))^|unique:users',
             'password' => 'required|min:6|confirmed',
         ]);
+		}
+		 elseif($type == 'lecturer') {
+		
+			return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|Regex:^(?=.*[a-z])@((mopipi)\.(ub)\.(bw))^|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ]);
+			
+		}
+		elseif($type == 'admin') {
+		
+        return Validator::make($data, [
+            'name' => 'required|max:255',
+            'email' => 'required|email|Regex:^([02])(adminpumas)@((ub)\.(ac)\.(bw))^|unique:users',
+            'password' => 'required|min:6|confirmed',
+        ]);
+		}
     }
-
     /**
      * Create a new user instance after a valid registration.
      *
@@ -63,10 +83,48 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
+		
+		$type=$data['type'];
+		if($type == 'student') {
+			$this->redirectTo ='/studentpage';
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+			'type'=> $data['type'],
         ]);
+		}
+	elseif($type == 'lecturer') {
+		$this->redirectTo ='/lecturerpage';
+		return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+			'type'=> $data['type'],
+        ]);
+	}
+		elseif($type == 'admin') {
+		$this->redirectTo ='/adminpage';
+		return User::create([
+            'name' => $data['name'],
+            'email' => $data['email'],
+            'password' => bcrypt($data['password']),
+			'type'=> $data['type'],
+        ]);
+	}
     }
+	
+	protected function authenticated($request, $user)
+    {
+       $type = $user->type;
+
+    if($type=='lecturer'){
+        return redirect()->intended('/lecturerpage');
+    }elseif($type=='student'){
+        return redirect()->intended('/studentpage');
+    }elseif($type=='admin'){
+        return redirect()->intended('/adminpage');
+    }
+    }
+
 }

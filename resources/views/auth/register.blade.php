@@ -65,6 +65,16 @@
                                 @endif
                             </div>
                         </div>
+						 <div class="form-group">
+                          <label for="type" class="col-md-4 control-label" >User Type:</label>
+                          <div class="col-md-6">
+                              <select class="form-control" name="type" id="type">
+                                <option value="lecturer">Lecturer</option>
+                                <option value="student">Student</option>
+                                <option value="admin">Administrator</option>
+                              </select>
+                          </div>
+                        </div>
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
