@@ -42,26 +42,26 @@ Route::get('lecturerpage', 'LecturerPageController@display');
 /* for admin */
 
 Route::get('adminpage', function () {
-  $data = BootGridData::all();
+  $data = AdminData::all();
   return view('adminpage')->withData($data);
 });
 
 Route::post('/save', function () {
   $data = Request::all();
-  $edit = new \App\User;
-  $edit = BootGridData::where('email',$data['email'])->first();
+  #$edit = new \App\User;
+  $edit = AdminData::where('email',$data['email'])->first();
   #$edit->id=User::find($data['edit_id']); #Auth::user()->name
-    echo $edit;
+    #echo $edit;
 
   $edit->name=$data['name'];
   $edit->email=$data['email'];
-  $edit->password=$data['password'];
+  #$edit->password=$data['password'];
   $edit->save();
   return Redirect::back();
 });
 Route::post('/delete',function () {
   $data = Request::all();
-  $edit = BootGridData::where('id',$data['del_id'])->delete();
+  $edit = AdminData::where('id',$data['del_id'])->delete();
   return Redirect::back();
 });
 

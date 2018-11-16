@@ -103,12 +103,12 @@
                      <div class="w3-col s8"><input class="w3-input w3-border w3-margin-bottom" id="email" type="email" placeholder="Enter Email" name="email" required></div>
                   </div>
                   
-                  <div class="w3-row">
+                  <!--div class="w3-row">
                      <div class="w3-col s4">
                         <label><b>Password</b></label>
                      </div>
                      <div class="w3-col s8"><input class="w3-input w3-border" id="password" type="text" placeholder="Password" name="password" required></div>
-                  </div>
+                  </div-->
                   <button class="w3-btn-block w3-indigo w3-section w3-padding" type="submit">Save</button>
                </div>
             </form>
@@ -144,7 +144,7 @@
              formatters: {
                "actions": function(column, row)
                {
-                 return "<button onclick=\"document.getElementById('edit').style.display='block'\" data-id=\"" + row.id + "\" data-name=\"" + row.name + "\" data-email=\"" + row.email + "\" data-password=\"" + row.password + "\" class=\"w3-btn w3-blue w3-small edit\"><span class=\"fa fa-pencil\"></span></button> " +
+                 return "<button onclick=\"document.getElementById('edit').style.display='block'\" data-id=\"" + row.id + "\" data-name=\"" + row.name + "\" data-email=\"" + row.email + "\"  class=\"w3-btn w3-blue w3-small edit\"><span class=\"fa fa-pencil\"></span></button> " +
                  "<button onclick=\"document.getElementById('delete').style.display='block'\" data-name=\"" + row.name + "\" data-id=\"" + row.id + "\" class=\"w3-btn w3-blue w3-small delete\"><span class=\"fa fa-remove\"></span></button>";
 
                }
@@ -156,7 +156,6 @@
                  $('#name').val($(this).data("name"));
                 
                  $('#email').val($(this).data("email"));
-                 $('#password').val($(this).data("password"));
                });
                $(this).find(".delete").click(function (e) {
                  $('#del_id').val($(this).data("id"));
