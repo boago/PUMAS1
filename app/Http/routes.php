@@ -42,14 +42,14 @@ Route::get('lecturerpage', 'LecturerPageController@display');
 /* for admin */
 
 Route::get('adminpage', function () {
-  $data = AdminData::all();
+  $data = BootGridData::all();
   return view('adminpage')->withData($data);
 });
 
 Route::post('/save', function () {
   $data = Request::all();
   #$edit = new \App\User;
-  $edit = AdminData::where('email',$data['email'])->first();
+  $edit = BootGridData::where('email',$data['email'])->first();
   #$edit->id=User::find($data['edit_id']); #Auth::user()->name
     #echo $edit;
 
@@ -61,7 +61,7 @@ Route::post('/save', function () {
 });
 Route::post('/delete',function () {
   $data = Request::all();
-  $edit = AdminData::where('id',$data['del_id'])->delete();
+  $edit = BootGridData::where('id',$data['del_id'])->delete();
   return Redirect::back();
 });
 

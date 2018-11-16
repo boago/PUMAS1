@@ -32,11 +32,8 @@
 
        <div class="collapse navbar-collapse" id="app-navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
-                    <!-- Authentication Links -->
-                    @if (Auth::guest())
-                        <li><a href="{{ url('/login') }}">Login</a></li>                        
-                    @else
-                     <li><a href="{{ url('/register') }}">Register New User</a></li>
+                    <!-- Authentication Links -->                   
+                     <li><a href="{{ url('/') }}">Register New User</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
                                 {{ Auth::user()->name }} <span class="caret"></span>
@@ -47,7 +44,7 @@
                                
                             </ul>
                         </li>
-                    @endif
+                  
                 </ul>
            <!--header class="w3-container w3-text-indigo w3-margin-top-64"-->
                <h2  class="display-2">User Details</h2>
@@ -61,7 +58,7 @@
                <th data-column-id="id" data-type="numeric" data-order="asc">Id</th>     
                <th data-column-id="name" > Name</th>
                <th data-column-id="email" >Email</th>
-               <th data-column-id="password" >Password</th>
+               <!--th data-column-id="password" >Password</th-->
                <th data-column-id="actions" data-formatter="actions" data-sortable="false">Actions</th>
             </tr>
          </thead>
@@ -71,7 +68,7 @@
                <td>{{$details->id}}</td>
                <td>{{$details->name}}</td>
                <td>{{$details->email}}</td>
-               <td>{{$details->password}}</td>
+               <!--td>{{$details->password}}</td-->
             </tr>
             @endforeach
          </tbody>
